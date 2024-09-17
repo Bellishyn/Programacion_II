@@ -11,9 +11,32 @@ public class Principal {
     static Libro lt = new Libro("", "", 0);
     static ArrayList<Autor> a = new ArrayList<>();
     static ArrayList<Libro> l = new ArrayList<>();
-    static int opt, pag = 0, dd , mm, yy;
+    static int opt, pag = 0, dd , mm, yy, j;
     static String nombre, nacionalidad, editorial;
     static Scanner leer = new Scanner(System.in);
+
+    static boolean busquedaAutores(){
+        j = 0;
+        while(j < a.size()){
+            if(a.contains(at)){
+                return true;
+            }
+            j++;
+        }
+        return false;
+    }
+
+    static void agregarNuevoAutor(){
+        at.asignarLibro(lt);
+        lt.asignarAutor(at);
+        a.add(at);
+    }
+
+    static void modificarAutor(){
+        at.asignarLibro(lt);
+        at = a.get(j - 1);
+        at.asignarLibro(lt);
+    }
 
     //Metodo para agregar a un autor
     static void agregarAutor(){
@@ -29,10 +52,12 @@ public class Principal {
         leer.nextLine();
 
         at = new Autor(nombre, nacionalidad, new Fecha(dd, mm, yy));
-        at.asignarLibro(lt);
-        lt.asignarAutor(at);
-        a.add(at);
-         
+
+        if((busquedaAutores()) == false) {
+            agregarNuevoAutor();
+        }else{
+            modificarAutor();
+        }
     }
 
     //Metodo para imprimir una lista de autores
@@ -41,8 +66,9 @@ public class Principal {
             System.out.println("Lista vacia.");
             return;
         }
+        System.out.println(at.getNombre());
         for(int i = 0; i < a.size(); i++){
-            System.out.println(a.get(i));
+            System.out.println(a.get(i).);
         }
         System.out.print("\n");
         return;
