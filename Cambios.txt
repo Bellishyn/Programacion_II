@@ -6,5 +6,9 @@ Bitacora:
                 |
                 |
                 |
-                Se modificaron los archivos de las carpetas "autor", "fecha" y "libro". En la carpeta "libro" -> "main" se encuentra el
+                Se modificaron los archivos de las carpetas "autor", "fecha" y "libro". En la carpeta "libro"->"main" se encuentra el
                 ejecutable para la practica 5 de Asociacion Bidireccional.
+                |
+                |
+                |
+                Se agrego la subcarpeta "clase"<-"libro"

@@ -1,7 +1,8 @@
-package libro;
+package libro.clase;
 
-import autor.Autor;
 import java.util.ArrayList;
+
+import autores.Autor;
 
 public class Libro {
     private String titulo;
@@ -13,7 +14,7 @@ public class Libro {
         this.titulo = titulo;
         this.editorial = editorial;
         this.noPag = noPag;
-        autores = new ArrayList();
+        autores = new ArrayList<>();
     }
 
     public String getTitulo(){

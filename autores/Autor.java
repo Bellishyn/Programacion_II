@@ -1,6 +1,6 @@
-package autor;
+package autores;
 
-import libro.Libro;
+import libro.clase.Libro;
 import fecha.Fecha;
 import java.util.ArrayList;
 
@@ -13,8 +13,8 @@ public class Autor {
     public Autor(String nombre, String nacionalidad, Fecha fecha){
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
-        this.fecha  = fecha;
-        libros = new ArrayList();
+        this.fecha = fecha;
+        libros = new ArrayList<>();
     }
 
     public String getNombre(){
@@ -22,11 +22,11 @@ public class Autor {
     }
 
     public void asignarLibro(Libro libro){
-        this.libros.add(libro);
+        libros.add(libro);
     }
 
     @Override
     public String toString(){
-        return nombre+ ", " + nacionalidad + ", " + fecha + "\n";
+        return nombre + ", " + nacionalidad + ", " + fecha + "\n";
     }
 }
