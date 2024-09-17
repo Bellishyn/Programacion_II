@@ -32,7 +32,7 @@ public class Libro {
     public String toString(){
         String cad = "";
         for(int i = 0; i < autores.size(); i++){
-            cad += autores.get() + ", ";
+            cad += autores.get(i) + ", ";
         }
         return titulo + ", " + cad + "No. paginas " + noPag
         + ", " + editorial;

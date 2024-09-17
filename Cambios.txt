@@ -1,0 +1,10 @@
+Bitacora:
+
+9/16/2024.-     Se agregaron lasc carpetas "autor", "fecha" y "libro". Se simplificaron la cantidad de carpetas, además de la corrección a
+                la hora de ejecutar los archivos "Principal.java" de todas las carpetas, al igual los archivos "Programa1.java",
+                "Programa2.java" y "Programa3.java" de la carpeta "cadena".
+                |
+                |
+                |
+                Se modificaron los archivos de las carpetas "autor", "fecha" y "libro". En la carpeta "libro" -> "main" se encuentra el
+                ejecutable para la practica 5 de Asociacion Bidireccional.
