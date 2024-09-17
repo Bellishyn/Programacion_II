@@ -33,9 +33,9 @@ public class Libro {
     public String toString(){
         String cad = "";
         for(int i = 0; i < autores.size(); i++){
-            cad += autores.get(i) + ", ";
+            cad += "      " + autores.get(i).getNombre() + "\n";
         }
-        return titulo + ", " + cad + "No. paginas " + noPag
-        + ", " + editorial;
+        return "Titulo: " + titulo + "\n   Editorial: " + editorial + "\n   Paginas: " + noPag
+        + "\n   Autores:\n" + cad;
     }
 }

@@ -27,6 +27,10 @@ public class Autor {
 
     @Override
     public String toString(){
-        return nombre + ", " + nacionalidad + ", " + fecha;
+        String cad = "";
+        for(int i = 0; i < libros.size(); i++){
+            cad += libros.get(i).getTitulo() + "\n";
+        }
+        return nombre + ", " + nacionalidad + ", " + fecha + "\nLibros: " + cad;
     }
 }
