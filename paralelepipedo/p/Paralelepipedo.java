@@ -1,4 +1,4 @@
-package paralelepipedo.src.paralelepipedo.p;
+package paralelepipedo.p;
 
 import vector.Vector;
 

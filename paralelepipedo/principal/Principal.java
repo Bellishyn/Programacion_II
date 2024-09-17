@@ -1,4 +1,4 @@
-package paralelepipedo.Principal;
+package paralelepipedo.principal;
 
 import java.util.Scanner;
 import paralelepipedo.p.Paralelepipedo;
@@ -38,41 +38,41 @@ public class Principal {
         System.out.print("Seleccione una opcion...\n>>");
         opt = leer.nextInt();
         
-        switch (opt) {
-            case 1:{
-                asignacion();
-                break;
+        do{
+            switch (opt) {
+                case 1:{
+                    asignacion();
+                    break;
+                }
+                case 2:{
+                    if((u.magnitud() == 0) && (v.magnitud() == 0) && (w.magnitud() == 0)){
+                        System.out.println("Uno o más vectores estan el origen, modifique los vectores...");
+                    }else
+                        if(u.validacion(v) || v.validacion(w) || w.validacion(u)){
+                            System.out.println("Uno o más vectores se repiten, modifique los vectores...");
+                        }else{
+                            System.out.println("El volmen es: " + p.volumen());
+                        }
+                    break;
+                }
+                case 3:{
+                    System.out.println(p);
+                    break;
+                }
+                case 4:{
+                    System.out.println("Saliendo...");
+                    return;
+                }
+                default:{
+                    System.out.println("Opcion no valida...");
+                    break;
+                }
             }
-            case 2:{
-                if((u.magnitud() == 0) && (v.magnitud() == 0) && (w.magnitud() == 0)){
-                    System.out.println("Uno o más vectores estan el origen, modifique los vectores...");
-                }else
-                    if(u.validacion(v) || v.validacion(w) || w.validacion(u)){
-                        System.out.println("Uno o más vectores se repiten, modifique los vectores...");
-                    }else{
-                        System.out.println("El volmen es: " + p.volumen());
-                    }
-                break;
-            }
-            case 3:{
-                System.out.println(p);
-                break;
-            }
-            case 4:{
-                System.out.println("Saliendo...");
-                break;
-            }
-            default:{
-                System.out.println("Opcion no valida...");
-                break;
-            }
-        }
+        }while(true);
     }
     public static void main(String[] args) {
         
-        do{
-           menu();
-        }while(true);
+           menu();       
         
     }
 }
