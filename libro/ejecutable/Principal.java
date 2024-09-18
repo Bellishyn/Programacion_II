@@ -33,9 +33,9 @@ public class Principal {
     }
 
     static void modificarAutor(){
-        at.asignarLibro(lt);
         at = a.get(j - 1);
         at.asignarLibro(lt);
+        a.set(j - 1, at);
     }
 
     //Metodo para agregar a un autor
@@ -66,9 +66,8 @@ public class Principal {
             System.out.println("Lista vacia.");
             return;
         }
-        System.out.println(at.getNombre());
         for(int i = 0; i < a.size(); i++){
-            System.out.println(a.get(i).);
+            System.out.println(a.get(i));
         }
         System.out.print("\n");
         return;
@@ -125,7 +124,7 @@ public class Principal {
             System.out.println("Lista vacia.");
             return;
         }
-        for(int i = 0; i < a.size(); i++){
+        for(int i = 0; i < l.size(); i++){
             System.out.print(l.get(i));
         }
         System.out.print("\n");

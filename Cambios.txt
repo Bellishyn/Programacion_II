@@ -12,3 +12,4 @@ Bitacora:
                 |
                 |
                 Se agrego la subcarpeta "clase"<-"libro"
+9/18/2024.-     Se hiceron cambios en el ejecutable "Principal.java"<-"ejecutable"<-libro
