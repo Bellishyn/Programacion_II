@@ -21,8 +21,17 @@ public class Autor {
         return nombre;
     }
 
+    public Fecha getFecha(){
+        return fecha;
+    }
+
     public void asignarLibro(Libro libro){
         libros.add(libro);
+    }
+
+    
+    public boolean equals(Autor autor){
+        return (nombre.equals(autor.getNombre())) && (fecha.equals(autor.getFecha()));
     }
 
     @Override
@@ -31,6 +40,6 @@ public class Autor {
         for(int i = 0; i < libros.size(); i++){
             cad += libros.get(i).getTitulo() + "\n";
         }
-        return nombre + ", " + nacionalidad + ", " + fecha + "\nLibros: " + cad;
+        return nombre + ", " + nacionalidad + ", " + fecha + "\nLibros:\n   " + cad;
     }
 }

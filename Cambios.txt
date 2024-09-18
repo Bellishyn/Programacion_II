@@ -1,6 +1,6 @@
 Bitacora:
 
-9/16/2024.-     Se agregaron lasc carpetas "autor", "fecha" y "libro". Se simplificaron la cantidad de carpetas, además de la corrección a
+9/16/2024 .-    Se agregaron lasc carpetas "autor", "fecha" y "libro". Se simplificaron la cantidad de carpetas, además de la corrección a
                 la hora de ejecutar los archivos "Principal.java" de todas las carpetas, al igual los archivos "Programa1.java",
                 "Programa2.java" y "Programa3.java" de la carpeta "cadena".
                 |
@@ -12,4 +12,8 @@ Bitacora:
                 |
                 |
                 Se agrego la subcarpeta "clase"<-"libro"
-9/18/2024.-     Se hiceron cambios en el ejecutable "Principal.java"<-"ejecutable"<-libro
+
+9/17/2024 .-    Se hiceron cambios en el ejecutable "Principal.java"<-"ejecutable"<-libro
+
+9/18/2024 .-    Modificacion de clase "Fecha.java", "Autor.java" y "Principal.java". En "Fecha.java" y "Autor.java" se agregaron
+                los metodos "equals" para poder compararlos.

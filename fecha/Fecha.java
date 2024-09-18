@@ -11,6 +11,22 @@ public class Fecha {
         this.year = year;
     }
 
+    public int getDay(){
+        return day;
+    }
+
+    public int getMonth(){
+        return month;
+    }
+
+    public int getYear(){
+        return day;
+    }
+
+    public boolean equals(Fecha fecha){
+        return (day == fecha.getDay()) && (month == fecha.getMonth()) && (year == fecha.getYear());
+    }
+
     @Override
     public String toString(){
         return day + "/" + month + "/" + year;

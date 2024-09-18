@@ -11,19 +11,19 @@ public class Principal {
     static Libro lt = new Libro("", "", 0);
     static ArrayList<Autor> a = new ArrayList<>();
     static ArrayList<Libro> l = new ArrayList<>();
-    static int opt, pag = 0, dd , mm, yy, j;
+    static int opt, pag, dd , mm, yy;
     static String nombre, nacionalidad, editorial;
     static Scanner leer = new Scanner(System.in);
 
-    static boolean busquedaAutores(){
-        j = 0;
-        while(j < a.size()){
-            if(a.contains(at)){
-                return true;
+    static int busquedaAutores(){
+        int pos = 0;
+        while(pos < a.size()){
+            if(a.get(pos).equals(at)){
+                return pos;
             }
-            j++;
+            pos++;
         }
-        return false;
+        return -1;
     }
 
     static void agregarNuevoAutor(){
@@ -32,14 +32,14 @@ public class Principal {
         a.add(at);
     }
 
-    static void modificarAutor(){
-        at = a.get(j - 1);
-        at.asignarLibro(lt);
-        a.set(j - 1, at);
+    static void modificarAutor(int posicionAutor){
+        a.get(posicionAutor).asignarLibro(lt);
     }
 
     //Metodo para agregar a un autor
     static void agregarAutor(){
+        int posicionAutor = 0;
+
         System.out.println("Proporcione la fecha en el formato dd_mm_yy, tenga en cuenta que el guion bajo es un espacio");
         System.out.print("Nombre: ");
         nombre = leer.nextLine();
@@ -49,32 +49,32 @@ public class Principal {
         dd = leer.nextInt();
         mm = leer.nextInt();
         yy = leer.nextInt();
-        leer.nextLine();
 
         at = new Autor(nombre, nacionalidad, new Fecha(dd, mm, yy));
 
-        if((busquedaAutores()) == false) {
+        posicionAutor = busquedaAutores();
+
+        System.out.println(posicionAutor);
+
+        if(posicionAutor == -1) {
             agregarNuevoAutor();
         }else{
-            modificarAutor();
+            modificarAutor(posicionAutor);
         }
     }
 
     //Metodo para imprimir una lista de autores
-    static void listaAutores(){
-        if(a.isEmpty()){
+    static void listaAutores(int posicionAutor){
+        if(posicionAutor == -1){
             System.out.println("Lista vacia.");
             return;
         }
-        for(int i = 0; i < a.size(); i++){
-            System.out.println(a.get(i));
-        }
-        System.out.print("\n");
-        return;
+            System.out.println(a.get(posicionAutor));
     }
 
     //Metodo Sub-Menu
     static void subMenu(){
+        int posicionAutor = 0;
         //Lectura de datos del Libro nuevo
         System.out.print("Titulo: ");
         nombre = leer.nextLine();
@@ -93,6 +93,7 @@ public class Principal {
             System.out.print("3.-\tRegresar al Menu anterior\nSelecione una opcion\n>> ");
             opt = leer.nextInt();
             leer.nextLine();
+
             switch (opt) {
                 case 1:{
                     //Llamado a la funcion de la linea 18
@@ -101,8 +102,9 @@ public class Principal {
                 }
                 case 2:{
                     //Llamado a la funcion de la linea 34
+                    posicionAutor = busquedaAutores();
                     System.out.println("Lista de autores:");
-                    listaAutores();
+                    listaAutores(posicionAutor);
                     break;
                 }
                 case 3:{
@@ -128,7 +130,6 @@ public class Principal {
             System.out.print(l.get(i));
         }
         System.out.print("\n");
-        return;
     }
 
     //Menu principal
