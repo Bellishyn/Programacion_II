@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Principal {
     static Autor at = new Autor("", "", new Fecha(01, 01, 1900));
     static Libro lt = new Libro("", "", 0);
+    static Fecha fecha;
     static ArrayList<Autor> a = new ArrayList<>();
     static ArrayList<Libro> l = new ArrayList<>();
     static int opt, pag, dd , mm, yy;
@@ -50,7 +51,8 @@ public class Principal {
         mm = leer.nextInt();
         yy = leer.nextInt();
 
-        at = new Autor(nombre, nacionalidad, new Fecha(dd, mm, yy));
+        fecha = new Fecha(dd, mm, yy);
+        at = new Autor(nombre, nacionalidad, fecha);
 
         posicionAutor = busquedaAutores();
 
