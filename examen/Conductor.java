@@ -29,16 +29,12 @@ public class Conductor{
         viajes[cantViajes++] = viaje;
     }
 
-    public String devolverGanancias(String fecha){
-        int i;
-
-        i = 0;
-
-        while((i < cantViajes) && (viajes[i].getFecha().equals(fecha))){
-            i++;
+    public String devolverGanancias(String fecha, int n){
+        while((n < cantViajes) && (viajes[n].getFecha().equals(fecha))){
+            n++;
         }
 
-        return "Ganancia en " + viajes[i].getFecha() + " : " + (viajes[i].getTarifa() * viajes[i].getDistancia());
+        return "Ganancia en " + viajes[n].getFecha() + " : " + (viajes[n].getTarifa() * viajes[n].getDistancia());
     }
 
     @Override

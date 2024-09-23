@@ -24,7 +24,7 @@ public class Principal {
         }
         System.out.println(c1);
         for(int i = 0; i < 3; i++){
-            System.out.println(c1.devolverGanancias(c1.getFecha(i)));
+            System.out.println(c1.devolverGanancias(c1.getFecha(i), i));
         }
     }
 }
