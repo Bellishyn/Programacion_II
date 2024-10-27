@@ -26,41 +26,20 @@ public class CuentaBancaria {
     }
     
     public void depositar(double cantidad) {
-        try{
-            Object c = new CuentaBancaria(cantidad, this.noCuenta);
-            balance = balance + cantidad;
+        if(cantidad < 0){
+            throw new IllegalArgumentException("¡Cantidad negativa,no es posible depositar! Proporcione un valor positivo");
         }
-        catch(IllegalArgumentException e1){
-            System.out.println("¡Cantidad negativa, no es posible depositar! Proporcione un valor positivo.");
-        }
-        catch(Exception e2){
-            System.out.println("Ocurrio un error");
-        }
-        finally{
-
-        }
+        balance = balance + cantidad;
     }
 
-    public void retirar(double cantidad) {
-        try{
-            Object c = new CuentaBancaria(cantidad, this.noCuenta);
-            if(balance < cantidad){
-                try {
-                    throw new IllegalArgumentException();
-                } catch (Exception e1) {
-                    System.out.println("¡No hay fondos suficientes!");
-                }
-            }else{balance = balance - cantidad;}
+    public void retirar(double cantidad) throws Sobregiro{
+        if(cantidad < 0){
+            throw new IllegalArgumentException("¡Cantidad negativa, no es posible retirar! Proporcione un valor positivo");
         }
-        catch(IllegalArgumentException e2){
-            System.out.println("¡Cantidad negativa, no es posible retirar! Proporcione un valor positivo.");
+        if(balance < cantidad){
+            throw new Sobregiro();
         }
-        catch(Exception e3){
-            System.out.println("Ocurrio un error");
-        }
-        finally{
-
-        }
+        balance = balance - cantidad;
     }
     
     @Override

@@ -24,7 +24,7 @@ public class Banco {
                 return cuentas[i];
             }
         }
-        return null;
+        throw new IllegalArgumentException("ERROR: No existe cuenta. Busque o cree una cuenta.");
     }
    
     @Override
